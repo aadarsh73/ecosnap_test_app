@@ -1,6 +1,5 @@
 package com.example.login_test_app
 
-import okhttp3.Credentials
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body

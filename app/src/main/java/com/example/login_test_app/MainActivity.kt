@@ -1,10 +1,12 @@
 package com.example.login_test_app
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -19,8 +21,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var password = findViewById<EditText>(R.id.password)
         var username = findViewById<EditText>(R.id.username)
-        var loginButton = findViewById<Button>(R.id.btnLogin)
-
+        val loginButton = findViewById<Button>(R.id.btnLogin)
+        val registerRedirect = findViewById<TextView>(R.id.registerRedirect)
+        registerRedirect.setOnClickListener(){
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
         loginButton.setOnClickListener {
             val usernameText = username.text.toString()
             val passwordText = password.text.toString()
