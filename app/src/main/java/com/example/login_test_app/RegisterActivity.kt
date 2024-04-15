@@ -16,15 +16,17 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
         val username = findViewById<EditText>(R.id.username)
+        val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
         val loginRedirect = findViewById<TextView>(R.id.loginRedirect)
         btnRegister.setOnClickListener {
             val usernameText = username.text.toString()
+            val emailText = email.text.toString()
             val passwordText = password.text.toString()
 
             if (usernameText.isNotEmpty() && passwordText.isNotEmpty()) {
-                val user = User(usernameText, passwordText)
+                val user = User(usernameText, emailText, passwordText)
                 registerUser(user)
             } else {
                 // Show error message

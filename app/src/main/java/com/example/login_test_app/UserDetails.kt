@@ -1,7 +1,7 @@
 package com.example.login_test_app
 
-data class User(
+data class UserDetails(
     val username: String,
     val email: String,
-    val password: String
+    val id: String
 )

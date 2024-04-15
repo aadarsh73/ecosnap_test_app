@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity() {
                         val sessionManager = SessionManager(this@MainActivity)
                         sessionManager.saveAuthToken(token ?: "")
                         Toast.makeText(this@MainActivity, "Login Success", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+                        startActivity(intent)
                         // Navigate to the next activity or show a success message
                     } else {
                         // Handle login failure
